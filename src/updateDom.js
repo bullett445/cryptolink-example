@@ -1,5 +1,5 @@
 document.getElementById("app").innerHTML = `
-<h1>Crypto musement example</h1>
+<h1>Crypto link example</h1>
 <div>here the computed URL:<b><pre id="url"></pre></b></div>
 `;
 
