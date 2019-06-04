@@ -19,6 +19,8 @@ const PUBLIC_KEY =
 
 const TARGET_URL = "https://www.meine-tui.com/registration/";
 
+const now = new Date();
+
 const data = {
   email: "fritz.tester@tui.de",
   bookingCode: "53154876",
@@ -26,15 +28,16 @@ const data = {
   lastName: "Tester",
   gender: "m",
   departureDate: "2019-07-01",
-  createTimestamp: "2019-04-23T18:20:43.511Z"
+  createTimestamp: now.toISOString() // "2019-06-04T11:46:07.008Z"
 };
 
 // encrypt() accepts a string as data input, so stringify objects
 encrypt(PUBLIC_KEY, JSON.stringify(data))
-  // encoding is needed to use the encrypted string in the URL
+  // encode base64
   .then(btoa)
-  // here the encrypted string is appended to the url (with the parameter name)
+  // alter encoding to base64url
   .then(fromBase64toURL)
+  // here the encrypted string is appended to the url (with the parameter name)
   .then(qs => `${TARGET_URL}?data=${qs}`)
   // this just updates the url shown in the rendered html
   .then(updateUrl);
