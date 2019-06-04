@@ -14,6 +14,12 @@ function fromBase64toURL(base64) {
     .replace(/\//g, "_");
 }
 
+// openssl genrsa -out private.key 4096
+// openssl rsa -in private.key -pubout -out public.key
+// openssl rsa -in privatekey.key -RSAPublicKey_out -out public_rsa.key
+// (true public RSA key)
+// https://8gwifi.org/jwkconvertfunctions.jsp
+
 const PUBLIC_KEY =
   "0X786kHj-ewx13C-JzNhWDizkJSCP8cdblU2894Nw7dICiEoHe-u_QJIJSmFFDxi0BQvAPgxLhMEnjnK_Qy8l_B2oBkNoUZuNu92jr28TVfmRUTw39N3mm06k_-lFQ7EgUgs2n-QfTJEUCjHXuGMBKcljG3Wln90d0UbrtWiRcnSOXm5CLJwNDntIqxGB4xhlagkkRqzwuZp5Sk31ohwIF_YlDJEGqJXhygu7ZhZSIwYZ6XiSmsM-gMsFjEhDWOQRc-kv54Z8CRnY3AIwa4-WjHzwDsw16QIxAPIhsblQgHcxLOtS73mfw6f6PT0MIvazfi11eDe_TerqM4NIRqGWQ";
 
